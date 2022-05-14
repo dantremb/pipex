@@ -6,7 +6,7 @@
 #    By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/02 23:33:38 by root              #+#    #+#              #
-#    Updated: 2022/05/14 10:40:18 by dantremb         ###   ########.fr        #
+#    Updated: 2022/05/14 16:13:20 by dantremb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ all: init $(NAME)
 	
 init:
 	@echo "Preparing Libft"
-	@make -C libft/
+	@$(MAKE) -s -C libft/
 	@echo "Preparing Pipex"
 	@printf "Compiling -"
 
@@ -55,11 +55,11 @@ $(NAME): $(OBJS)
 
 clean:
 	@$(REMOVE) $(OBJS)
-	@make clean -C libft/
+	@@$(MAKE) -s clean -C libft/
 
 fclean: clean
 	@$(REMOVE) $(NAME)
-	@make fclean -C libft/
+	@$(MAKE) -s fclean -C libft/
 
 re:	fclean all
 

@@ -6,7 +6,7 @@
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 09:39:30 by dantremb          #+#    #+#             */
-/*   Updated: 2022/05/14 12:54:04 by dantremb         ###   ########.fr       */
+/*   Updated: 2022/05/14 18:57:48 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ char *get_path(char **envp)
 		}
 		i++;
 	}
+	printf("return path = %s\n", envp_path);
 	return (envp_path);
 }
 
@@ -40,7 +41,9 @@ char	*get_cmd_path(char *env_path, char *cmd)
 	fcnt_path = ft_split(env_path, ':');
 	while (fcnt_path[i])
 	{
+		printf("b4 join = %s + %s\n", fcnt_path[i], cmd);
 		test_path = ft_strjoin(fcnt_path[i], cmd);
+		printf("after join = %s\n", test_path);
 		if (access(test_path, F_OK | X_OK) == 0)
 			return(test_path);
 		free (test_path);
@@ -61,7 +64,7 @@ int main (int argc, char **argv, char **envp)
 	else if (argc == 2)
 		ft_putstr(argv[1]);
 	else
-		execve("/Users/dantremb/.brew/bin/tree", options, envp);
+		execve("/usr/bin/tree", options, envp);
 	
 	return (0);
 }

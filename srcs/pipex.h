@@ -6,13 +6,14 @@
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 09:39:32 by dantremb          #+#    #+#             */
-/*   Updated: 2022/05/14 09:54:40 by dantremb         ###   ########.fr       */
+/*   Updated: 2022/05/14 18:48:43 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PIPEX_H
 # define PIPEX_H
 
+# include <stdio.h>
 # include "../libft/srcs/libft.h"
 
 #endif
