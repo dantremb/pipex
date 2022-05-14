@@ -6,7 +6,7 @@
 #    By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/02 23:33:38 by root              #+#    #+#              #
-#    Updated: 2022/05/14 10:03:48 by dantremb         ###   ########.fr        #
+#    Updated: 2022/05/14 10:40:18 by dantremb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ PRINT_NAME = Pipex
 SRCS_FILES = pipex.c
 
 SRCS_PATH = srcs/
+
+LIBFT = libft/libft.a
 
 OBJS= $(SRCS:%.c=%.o)
 
@@ -35,32 +37,33 @@ REMOVE = rm -rf
 COMMIT = $(shell date "+%d %B %T")
 
 all: init $(NAME)
-	echo "> Done!.\n"
-	echo "$(PRINT_NAME) Compiled!"
+	@echo "> Done!."
+	@echo "$(PRINT_NAME) Compiled!"
 	
 init:
-	echo "Compiling Libft"
-	make -C libft/
-	echo "Compiling Pipex"
+	@echo "Preparing Libft"
+	@make -C libft/
+	@echo "Preparing Pipex"
+	@printf "Compiling -"
 
 %.o: %.c
-	printf "-"
-	$(CC) $(CFLAGS) -o $@ -c $<
+	@printf "-"
+	@$(CC) $(CFLAGS) -o $@ -c $<
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $^
+	@$(CC) $(CFLAGS) -o $@ $^ $(LIBFT)
 
 clean:
-	$(REMOVE) $(OBJS)
-	make clean -C libft/
+	@$(REMOVE) $(OBJS)
+	@make clean -C libft/
 
 fclean: clean
-	$(REMOVE) $(NAME)
-	make fclean -C libft/
+	@$(REMOVE) $(NAME)
+	@make fclean -C libft/
 
 re:	fclean all
 
 git:
-	git add .
-	git commit -m "$(COMMIT)"
-	git push
+	@git add .
+	@git commit -m "$(COMMIT)"
+	@git push
