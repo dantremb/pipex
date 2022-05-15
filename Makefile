@@ -6,7 +6,7 @@
 #    By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/02 23:33:38 by root              #+#    #+#              #
-#    Updated: 2022/05/14 16:13:20 by dantremb         ###   ########.fr        #
+#    Updated: 2022/05/14 20:51:15 by dantremb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = pipex
 
 PRINT_NAME = Pipex
 
-SRCS_FILES = pipex.c
+SRCS_FILES = pipex.c get_cmd_path.c
 
 SRCS_PATH = srcs/
 

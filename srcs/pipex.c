@@ -6,65 +6,22 @@
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 09:39:30 by dantremb          #+#    #+#             */
-/*   Updated: 2022/05/14 18:57:48 by dantremb         ###   ########.fr       */
+/*   Updated: 2022/05/14 20:49:54 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-char *get_path(char **envp)
-{
-	char	*envp_path = NULL;
-	int		i;
-	
-	i = 0;
-	while (envp[i])
-	{
-		if (ft_strnstr(envp[i], "PATH=", ft_strlen(envp[i])))
-		{
-			envp_path = ft_strdup(envp[i]);
-			break ;
-		}
-		i++;
-	}
-	printf("return path = %s\n", envp_path);
-	return (envp_path);
-}
-
-char	*get_cmd_path(char *env_path, char *cmd)
-{
-	char	**fcnt_path;
-	char	*test_path;
-	int		i;
-	
-	i = 0;
-	fcnt_path = ft_split(env_path, ':');
-	while (fcnt_path[i])
-	{
-		printf("b4 join = %s + %s\n", fcnt_path[i], cmd);
-		test_path = ft_strjoin(fcnt_path[i], cmd);
-		printf("after join = %s\n", test_path);
-		if (access(test_path, F_OK | X_OK) == 0)
-			return(test_path);
-		free (test_path);
-		i++;
-	}
-	return(NULL);
-}
-
 int main (int argc, char **argv, char **envp)
 {
 	char *options[3] = {"tree", "-f", NULL};
-	char *cmd = "/tree";
+	char *cmd = "ls";
 
 	if (argc == 3)
-	{
-		ft_putstr(get_cmd_path(get_path(envp), cmd));
-	}
+		ft_putstr(get_cmd_path(envp, ft_strjoin("/", cmd)));
 	else if (argc == 2)
 		ft_putstr(argv[1]);
 	else
-		execve("/usr/bin/tree", options, envp);
-	
+		execve(get_cmd_path(envp, ft_strjoin("/", cmd)), options, envp);
 	return (0);
 }
