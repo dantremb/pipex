@@ -6,7 +6,7 @@
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 09:39:30 by dantremb          #+#    #+#             */
-/*   Updated: 2022/05/15 15:37:36 by dantremb         ###   ########.fr       */
+/*   Updated: 2022/05/15 16:27:39 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	parent(char **argv, char **envp, int *fd)
 	char	**options;
 	char	*path;
 	
-	wait(NULL);
 	options = ft_split(argv[3], 32);
 	path = get_cmd_path(envp, ft_strjoin("/", options[0]));
 	file2 = open(argv[4], O_WRONLY | O_CREAT | O_TRUNC, 0777);
@@ -54,8 +53,7 @@ int main (int argc, char **argv, char **envp)
 		pid = fork();
 		if (pid == 0)
 			child(argv, envp, fd);
-		else
-			parent(argv, envp, fd);
+		parent(argv, envp, fd);
 	}
 	else
 		write(1, "Invalid Argument", 17);
