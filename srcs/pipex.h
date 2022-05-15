@@ -6,7 +6,7 @@
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 09:39:32 by dantremb          #+#    #+#             */
-/*   Updated: 2022/05/14 20:50:31 by dantremb         ###   ########.fr       */
+/*   Updated: 2022/05/14 21:50:02 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PIPEX_H
 
 # include <stdio.h>
+# include <sys/wait.h>
 # include "../libft/srcs/libft.h"
 
 char 	**get_path(char **envp);
