@@ -6,7 +6,7 @@
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 09:39:32 by dantremb          #+#    #+#             */
-/*   Updated: 2022/05/15 17:43:59 by dantremb         ###   ########.fr       */
+/*   Updated: 2022/05/15 22:28:48 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,8 @@
 char	**get_path(char **envp);
 char	*get_cmd_path(char **envp, char *cmd);
 void	send_error(char *error);
+void	command(char *argv, char **envp);
+void	child(char **argv, char **envp, int *fd);
+void	parent(char **argv, char **envp, int *fd);
 
 #endif
