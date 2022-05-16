@@ -1,0 +1,5 @@
+celles-ci seront inclues dans la vérification de la norme et vous aurez 0 au projet$
+bus error, double free, etc) mis à part dans le cas d�M-^@M-^Yun comportement indéfini. Si$
+ajoutera les divers headers, librairies ou fonctions qui ne sont pas autorisées dans$
+la partie principale du projet. Les bonus doivent être dans un fichier différent :$
+associé dans un dossier libft contenu à la racine. Le Makefile de votre projet doit$
