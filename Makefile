@@ -6,7 +6,7 @@
 #    By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/02 23:33:38 by root              #+#    #+#              #
-#    Updated: 2022/05/18 01:20:30 by dantremb         ###   ########.fr        #
+#    Updated: 2022/05/18 02:12:09 by dantremb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ CFLAGS = -Wall -Wextra -Werror -g
 REMOVE = rm -rf
 COMMIT = $(shell date "+%d %B %T")
 
-# Transforce les fichiers .c en fichiers .o
+# Transforme les fichiers .c en fichiers .o
 # La premiere utilise le contenu de la 2e pour compiler.
 # J'imprime un tiret (sans newline) pour créer ma ligne de progression.
 OBJS= $(SRCS:%.c=%.o)
