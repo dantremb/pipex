@@ -1,19 +1,19 @@
-  ********** Nom du programme ************ 
+    ********** Nom du programme ************ 
 
                    pipex
-
-  ********** Fichiers de rendu ***********
+                   
+    ********** Fichiers de rendu ***********
 
              Makefile, *.h, *.c
 
-  *************** Makefile ***************
+    *************** Makefile ***************
 
          NAME, all, clean, fclean, re
           
-  *************** Arguments ***************
+    *************** Arguments ***************
    
            file1 cmd1 cmd2 file2
 
-  ************** Description **************
+    ************** Description **************
 
     Ce projet consiste à gérer des pipes.
