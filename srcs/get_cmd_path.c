@@ -6,11 +6,11 @@
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 20:49:17 by dantremb          #+#    #+#             */
-/*   Updated: 2022/05/16 23:11:17 by dantremb         ###   ########.fr       */
+/*   Updated: 2022/05/17 22:42:48 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "../includes/pipex.h"
 
 char	**get_path(char **envp)
 {
@@ -27,7 +27,7 @@ char	**get_path(char **envp)
 		{
 			envp_path = ft_strdup(envp[i]);
 			if (!envp_path)
-				send_error("malloc error");
+				send_error("path:envp");
 			break ;
 		}
 		i++;
