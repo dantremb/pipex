@@ -6,7 +6,7 @@
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 09:39:32 by dantremb          #+#    #+#             */
-/*   Updated: 2022/05/17 22:25:47 by dantremb         ###   ########.fr       */
+/*   Updated: 2022/05/18 02:29:38 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdio.h>
 # include <sys/wait.h>
 # include <fcntl.h>
-# include "../libft/srcs/libft.h"
+# include "libft/includes/libft.h"
 
 char	**get_path(char **envp);
 char	*get_cmd_path(char **envp, char *cmd);

@@ -6,7 +6,7 @@
 #    By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/02 23:33:38 by root              #+#    #+#              #
-#    Updated: 2022/05/18 02:12:09 by dantremb         ###   ########.fr        #
+#    Updated: 2022/05/18 02:29:02 by dantremb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME = pipex
 
 # Fichiers sources.
 SRCS_FILES = pipex.c get_cmd_path.c
-LIBFT = libft/libft.a
+LIBFT = includes/libft/libft.a
+LIBFT_PATH = includes/libft/
 SRCS_PATH = srcs/
 SRCS = $(addprefix $(SRCS_PATH), $(SRCS_FILES))
 
@@ -47,7 +48,7 @@ all: init $(NAME)
 # le début de la compilation de pipex à l'écran (sans newline).
 init:
 	@echo "Preparing Libft"
-	@$(MAKE) -s -C libft/
+	@$(MAKE) -s -C $(LIBFT_PATH)
 	@echo "Preparing Pipex"
 	@printf "Compiling -"
 
@@ -58,10 +59,10 @@ $(NAME): $(OBJS)
 # Commande de nettoyage.
 clean:
 	@$(REMOVE) $(OBJS)
-	@@$(MAKE) -s clean -C libft/
+	@@$(MAKE) -s clean -C $(LIBFT_PATH)
 fclean: clean
 	@$(REMOVE) $(NAME)
-	@$(MAKE) -s fclean -C libft/
+	@$(MAKE) -s fclean -C $(LIBFT_PATH)
 
 # On nettoie et recompile.
 re:	fclean all
