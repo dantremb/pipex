@@ -6,7 +6,7 @@
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 20:49:17 by dantremb          #+#    #+#             */
-/*   Updated: 2022/05/17 22:42:48 by dantremb         ###   ########.fr       */
+/*   Updated: 2022/05/19 16:38:47 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ char	**get_path(char **envp)
 		}
 		i++;
 	}
+	if (!envp_path)
+		send_error("Env_path not found");
 	fnct_path = ft_split(envp_path, 58);
 	free(envp_path);
 	return (fnct_path);
