@@ -1,0 +1,13 @@
+total 152$
+drwxr-xr-x  12 dantremb  2022_quebec    408 20 mai 11:57 .$
+drwxr-xr-x  12 dantremb  2022_quebec    408 19 mai 11:23 ..$
+-rw-r--r--@  1 dantremb  2022_quebec   6148 19 mai 11:28 .DS_Store$
+drwxr-xr-x  16 dantremb  2022_quebec    544 20 mai 10:41 .git$
+-rw-r--r--   1 dantremb  2022_quebec     97 19 mai 11:23 .gitmodules$
+-rwxr-xr-x   1 dantremb  2022_quebec   2304 20 mai 11:36 Makefile$
+-rw-r--r--   1 dantremb  2022_quebec    441 19 mai 11:23 README.md$
+drwxr-xr-x   4 dantremb  2022_quebec    136 19 mai 11:23 includes$
+-rw-r--r--   1 dantremb  2022_quebec      0 19 mai 13:28 infile$
+-rw-r--r--   1 dantremb  2022_quebec      0 20 mai 11:57 outfile$
+-rwxr-xr-x   1 dantremb  2022_quebec  54208 20 mai 11:57 pipex$
+drwxr-xr-x   6 dantremb  2022_quebec    204 20 mai 11:57 srcs$

@@ -6,7 +6,7 @@
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 20:49:17 by dantremb          #+#    #+#             */
-/*   Updated: 2022/05/20 10:41:23 by dantremb         ###   ########.fr       */
+/*   Updated: 2022/05/20 11:57:49 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,18 +46,14 @@ char	*get_cmd_path(char **envp, char *cmd)
 	int		i;
 
 	i = 0;
+	if (access(cmd + 1, F_OK | X_OK) == 0)
+		return (cmd + 1);
 	fcnt_path = get_path(envp);
 	while (fcnt_path[i])
 	{
 		test_path = ft_strjoin(fcnt_path[i], cmd);
 		if (access(test_path, F_OK | X_OK) == 0)
-		{
-			i = -1;
-			while (fcnt_path[++i])
-				free(fcnt_path[i]);
-			free(fcnt_path);
-			return (test_path);
-		}
+			break ;
 		free (test_path);
 		i++;
 	}
@@ -65,7 +61,7 @@ char	*get_cmd_path(char **envp, char *cmd)
 	while (fcnt_path[++i])
 		free(fcnt_path[i]);
 	free(fcnt_path);
-	return (NULL);
+	return (test_path);
 }
 
 void	send_error(char *error)
