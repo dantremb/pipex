@@ -6,7 +6,7 @@
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 20:49:17 by dantremb          #+#    #+#             */
-/*   Updated: 2022/05/19 16:38:47 by dantremb         ###   ########.fr       */
+/*   Updated: 2022/05/20 10:40:38 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	**get_path(char **envp)
 	i = 0;
 	while (envp[i])
 	{
-		if (ft_strnstr(envp[i], "PATH=", ft_strlen(envp[i])))
+		if (ft_strnstr(envp[i], "PTH=", ft_strlen(envp[i])))
 		{
 			envp_path = ft_strdup(envp[i]);
 			if (!envp_path)
