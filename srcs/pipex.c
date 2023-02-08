@@ -6,7 +6,7 @@
 /*   By: dantremb <dantremb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 09:39:30 by dantremb          #+#    #+#             */
-/*   Updated: 2022/05/20 13:05:46 by dantremb         ###   ########.fr       */
+/*   Updated: 2023/02/08 16:27:45 by dantremb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,7 @@ int	main(int argc, char **argv, char **envp)
 {
 	pid_t	pid;
 	int		fd[2];
-	char	*test;
 
-	test = malloc(22);
-	test[3] = 'h';
 	if (argc == 5)
 	{
 		if (pipe(fd) == -1)
